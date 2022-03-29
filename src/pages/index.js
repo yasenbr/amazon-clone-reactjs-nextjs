@@ -7,6 +7,7 @@ export default function Home() {
         <title>Amazon 2.0</title>
       </Head>
       <h1>Amazon app clone build</h1>
+      {/*Header */}
     </div>
   );
 }
