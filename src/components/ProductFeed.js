@@ -19,7 +19,7 @@ function ProductFeed({ products }) {
         ))}
 
       <img
-        className="md:col-span-full mx-auto"
+        className="md:col-span-full mx-auto rounded-lg"
         src="https://links.papareact.com/dyz"
         alt=""
       />
