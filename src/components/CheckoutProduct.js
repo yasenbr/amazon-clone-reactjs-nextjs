@@ -94,18 +94,6 @@ function CheckoutProduct({
         )}
       </div>
       {/**add remove functionality */}
-<<<<<<< Updated upstream
-      <div className="flex flex-col space-y-2 my-auto justify-self-end">
-        <div>
-          <h2>Item count: </h2>
-        </div>
-        <button className="button" onClick={addItemToBasket}>
-          Add to Basket
-        </button>
-        <button className="button" onClick={removeItemFromBasket}>
-          Remove from Basket
-        </button>
-=======
       <div className="flex items-center ml-6 justify-self-end">
         <div className="flex pl-4 justify-between">
           <button
@@ -130,7 +118,6 @@ function CheckoutProduct({
         >
           <TrashIcon className="button_delete rounded-full" />
         </div>
->>>>>>> Stashed changes
       </div>
     </div>
   );
