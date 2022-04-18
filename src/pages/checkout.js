@@ -16,7 +16,7 @@ function Checkout() {
       <Header />
       <main className="lg:flex max-w-screen-2xl mx-auto">
         {/**left */}
-        <div className="flex-grow m-5 shadow-sm">
+        <div className="flex-grow m-5">
           <Image
             src="https://links.papareact.com/ikj"
             width={1020}
@@ -44,7 +44,7 @@ function Checkout() {
           </div>
         </div>
         {/**right */}
-        <div className="flex flex-col bg-white p-10 shadow-md">
+        <div className="flex flex-col bg-white p-10">
           {items.length > 0 && (
             <>
               <h2 className="whitespace-nowrap">
