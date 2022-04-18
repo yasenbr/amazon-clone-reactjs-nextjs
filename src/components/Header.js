@@ -69,7 +69,7 @@ const Header = () => {
       </div>
 
       {/**Search header bottom */}
-      <div className="flex items-center space-x-3 p-2 pl-6 bg-amazon_blue-light text-white">
+      <div className="flex items-center space-x-3 p-2 pl-6 bg-amazon_blue-light text-white sm:text-sm lg:text-base">
         <p className="link flex items-center">
           <MenuIcon className="h-6 mr-1" />
           All
