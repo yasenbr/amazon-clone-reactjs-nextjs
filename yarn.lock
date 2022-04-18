@@ -2433,7 +2433,7 @@
   dependencies:
     "has-flag" "^4.0.0"
 
-"tailwindcss@^2.1.2":
+"tailwindcss@^2.2.19":
   "integrity" "sha512-6Ui7JSVtXadtTUo2NtkBBacobzWiQYVjYW0ZnKaP9S1ZCKQ0w7KVNz+YSDI/j7O7KCMHbOkz94ZMQhbT9pOqjw=="
   "resolved" "https://registry.npmjs.org/tailwindcss/-/tailwindcss-2.2.19.tgz"
   "version" "2.2.19"
