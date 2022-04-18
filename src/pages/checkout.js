@@ -12,6 +12,8 @@ function Checkout() {
   const total = useSelector(selectTotal);
   const { data: session } = useSession();
 
+  console.log("tot", total);
+
   let pQuantity = items.map((item) => item.qty);
   let totQuantity = pQuantity.reduce((a, b) => a + b, 0);
 
