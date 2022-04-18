@@ -11,6 +11,10 @@ function Checkout() {
   const items = useSelector(selectItems);
   const total = useSelector(selectTotal);
   const { data: session } = useSession();
+
+  let pQuantity = items.map((item) => item.qty);
+  let totQuantity = pQuantity.reduce((a, b) => a + b, 0);
+
   return (
     <div className="bg-gray-100">
       <Header />
@@ -39,6 +43,7 @@ function Checkout() {
                 category={item.category}
                 image={item.image}
                 hasPrime={item.hasPrime}
+                quantity={item.qty}
               />
             ))}
           </div>
@@ -47,10 +52,14 @@ function Checkout() {
         <div className="flex flex-col bg-white p-10">
           {items.length > 0 && (
             <>
-              <h2 className="whitespace-nowrap">
-                Subtotal({items.length} items):{" "}
-                <span className="front-bold">
-                  <CurrencyFormat value={total} prefix={"€"} />
+              <h2 className="whitespace-nowrap text-gray-500 font-bold md:text-sm">
+                Subtotal({totQuantity} items):{" "}
+                <span className="font-bold ">
+                  <CurrencyFormat
+                    value={total.toFixed("2")}
+                    prefix={"€"}
+                    className="text-gray-500 font-bold md:text-sm"
+                  />
                 </span>
               </h2>
               <button

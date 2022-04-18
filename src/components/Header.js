@@ -15,6 +15,9 @@ const Header = () => {
   const router = useRouter();
   const items = useSelector(selectItems);
 
+  let pQuantity = items.map((item) => item.qty);
+  let totQuantity = pQuantity.reduce((a, b) => a + b, 0);
+
   return (
     <header>
       {/**top header */}
@@ -55,7 +58,7 @@ const Header = () => {
             className="relative link flex items-center"
           >
             <span className="absolute top-0 right-0 md:right-10 h-4 w-4 bg-yellow-400 text-center rounded-full text-black font-bold">
-              {items.length}
+              {totQuantity}
             </span>
             <ShoppingCartIcon className="h-10" />
             <p className="hidden md:inline font-extrabold md:text-sm mt-2">

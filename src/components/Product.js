@@ -27,9 +27,11 @@ function Product({ id, title, price, description, category, image }) {
       image,
       hasPrime,
       rating,
+      qty: 1,
     };
-    //send slected product as action to redux store the basket slice
+    //send selected product as action to redux store the basket slice
     dispatch(addToBasket(product));
+    console.log("dis:", dispatch);
   };
 
   return (

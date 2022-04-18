@@ -1,9 +1,18 @@
 import React from "react";
 import Image from "next/image";
-import { StarIcon } from "@heroicons/react/solid";
+import {
+  StarIcon,
+  TrashIcon,
+  MinusCircleIcon,
+  PlusCircleIcon,
+} from "@heroicons/react/solid";
 import CurrencyFormat from "react-currency-format";
 import { useDispatch } from "react-redux";
-import { addToBasket, removeFromBasket } from "../slices/basketSlice";
+import {
+  increaseProduct,
+  decrementProduct,
+  removeFromBasket,
+} from "../slices/basketSlice";
 
 function CheckoutProduct({
   id,
@@ -14,6 +23,7 @@ function CheckoutProduct({
   category,
   image,
   hasPrime,
+  quantity,
 }) {
   const dispatch = useDispatch();
   const addItemToBasket = () => {
@@ -28,11 +38,34 @@ function CheckoutProduct({
       hasPrime,
     };
     //push item into basket
-    dispatch(addToBasket(product));
+    dispatch(increaseProduct(product));
   };
 
-  const removeItemFromBasket = () => {
-    dispatch(removeFromBasket({ id }));
+  const removeItemFromBasketOne = () => {
+    const product = {
+      id,
+      title,
+      price,
+      rating,
+      description,
+      category,
+      image,
+      hasPrime,
+    };
+    dispatch(decrementProduct(product));
+  };
+  const deleteItemFromBasketOne = () => {
+    const product = {
+      id,
+      title,
+      price,
+      rating,
+      description,
+      category,
+      image,
+      hasPrime,
+    };
+    dispatch(removeFromBasket(product));
   };
   return (
     <div className="grid grid-cols-5">
@@ -61,6 +94,7 @@ function CheckoutProduct({
         )}
       </div>
       {/**add remove functionality */}
+<<<<<<< Updated upstream
       <div className="flex flex-col space-y-2 my-auto justify-self-end">
         <div>
           <h2>Item count: </h2>
@@ -71,6 +105,32 @@ function CheckoutProduct({
         <button className="button" onClick={removeItemFromBasket}>
           Remove from Basket
         </button>
+=======
+      <div className="flex items-center ml-6 justify-self-end">
+        <div className="flex pl-4 justify-between">
+          <button
+            className="button_checkout rounded-full"
+            onClick={addItemToBasket}
+          >
+            <PlusCircleIcon />
+          </button>
+          <div className="quantity border border-yellow-400 rounded-full text-center ml-4">
+            <h2>{quantity}</h2>
+          </div>
+          <button
+            className="button_checkout rounded-full ml-4"
+            onClick={removeItemFromBasketOne}
+          >
+            <MinusCircleIcon />
+          </button>
+        </div>
+        <div
+          className="flex ml-4 justify-between"
+          onClick={deleteItemFromBasketOne}
+        >
+          <TrashIcon className="button_delete rounded-full" />
+        </div>
+>>>>>>> Stashed changes
       </div>
     </div>
   );
