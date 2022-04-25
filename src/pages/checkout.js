@@ -6,11 +6,19 @@ import { useSelector } from "react-redux";
 import { selectItems, selectTotal } from "../slices/basketSlice";
 import CurrencyFormat from "react-currency-format";
 import { useSession } from "next-auth/react";
+import { loadStripe } from "@stripe/stripe-js";
+const stripePromise = loadStripe(process.env.stripe_public_key);
 
 function Checkout() {
   const items = useSelector(selectItems);
   const total = useSelector(selectTotal);
   const { data: session } = useSession();
+
+  const createSessionChseckout = async () => {
+    const stripe = await stripePromise;
+
+    //call the backend to create the checkout page
+  };
 
   console.log("tot", total);
 
@@ -65,6 +73,8 @@ function Checkout() {
                 </span>
               </h2>
               <button
+                role="link"
+                onClick={createSessionChseckout}
                 disabled={!session}
                 className={`button mt-2 ${
                   !session &&
