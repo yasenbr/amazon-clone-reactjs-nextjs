@@ -18,7 +18,7 @@ export default function Home({ products }) {
 }
 
 export async function getServerSideProps(context) {
-  process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
+  // process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
   const products = await fetch("http://fakestoreapi.com/products").then((res) =>
     res.json()
   );
