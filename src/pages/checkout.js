@@ -26,7 +26,6 @@ function Checkout() {
       }
     );
     console.log("21", checkoutSession);
-    console.log("22", checkoutSession.data.id);
     //redirect the user to checkout in stripe
     const result = await stripe.redirectToCheckout({
       sessionId: checkoutSession.data.id,
