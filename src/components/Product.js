@@ -56,7 +56,7 @@ function Product({ id, title, price, description, category, image }) {
       </div>
       <p className="text-xs my-2 line-clamp-2">{description}</p>
       <div className="mb-5 ">
-        <CurrencyFormat value={price} prefix={"€"} />
+        <CurrencyFormat value={price} displayType={"text"} prefix={"€"} />
       </div>
       {hasPrime && (
         <div className="flex items-center space-x-2 -mt-5">
